@@ -1,0 +1,135 @@
+:root {
+  --azul-mar: #004777;
+  --azul-cielo: #4fa3ff;
+  --turquesa-playa: #00bfa6;
+  --amarillo-sol: #ffd60a;
+  --rosado-fiesta: #ff3c8c;
+  --arena-blanco: #fdfcf9;
+  --texto: #002a44;
+}
+
+/* Fondo caribeño */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--arena-blanco) 0%, var(--azul-cielo) 100%);
+  color: var(--texto);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background 0.4s, color 0.4s;
+  padding-bottom: 40px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--azul-mar);
+}
+
+/* Tarjeta principal */
+.card {
+  background: #ffffffcc;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 71, 119, 0.1);
+  margin: 24px auto;
+  max-width: 840px;
+}
+
+/* Botones del quiz */
+.option {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px 14px;
+  border: 2px solid var(--turquesa-playa);
+  border-radius: 10px;
+  color: var(--azul-mar);
+  background: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option:hover {
+  background: var(--turquesa-playa);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Botones principales (CTA) */
+.btn-primary {
+  background: var(--turquesa-playa);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: var(--azul-mar);
+}
+
+/* Mensajes motivacionales */
+.tip {
+  background: var(--amarillo-sol);
+  color: var(--texto);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.footer {
+  text-align: center;
+  color: var(--azul-mar);
+  margin-top: 28px;
+}
+
+/*🌙 Modo oscuro refinado */
+.app.dark {
+  background: linear-gradient(180deg, #001f33 0%, #003b66 100%);
+  color: #f0f8ff; /* Azul muy claro tipo "hielo" para contraste */
+}
+
+.app.dark .card {
+  background: rgba(0, 41, 68, 0.92);
+  color: #f8fafc; /* texto claro dentro de las tarjetas */
+}
+
+/* Opciones de respuesta */
+.app.dark .option {
+  border: 1px solid #14b8a6; /* turquesa-playa */
+  color: #e2faff; /* texto azul muy claro */
+  background-color: rgba(0, 47, 77, 0.3); /* leve contraste para diferenciar */
+  transition: all 0.25s ease;
+}
+
+.app.dark .option:hover {
+  background: #14b8a6; /* turquesa brillante */
+  color: #003b66; /* texto oscuro sobre fondo turquesa */
+  transform: translateY(-4px);
+}
+
+/* Pie de página */
+.app.dark .footer {
+  color: #9be7e7;
+}
+
+
+/* Animación suave */
+.anim {
+  animation: fadeIn 0.8s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

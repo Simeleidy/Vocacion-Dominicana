@@ -1,0 +1,48 @@
+Proyecto: Vocación Dominicana 2025
+Integrantes:
+
+Raileidys Simé De León
+Nabila M. Cabrera Castillo
+Aldon Manuel Rodríguez Silvestre
+
+Asignatura: Innovación Dominicana 2025 – React
+Reto: Vocación Dominicana
+Docente: (Agregar el nombre del profesor si aplica)
+
+🧩 Evidencia del historial de desarrollo
+
+📅 Día 1 – Creación del proyecto
+Inicializamos el proyecto con Vite + React.
+Configuramos la estructura base (src/, public/, index.html, App.jsx).
+Se agregó el archivo package.json con dependencias principales.
+
+📅 Día 2 – Diseño del estilo general
+Creamos la paleta de colores dominicana (azul mar, turquesa playa, amarillo sol, rosado fiesta).
+Se desarrolló el archivo styles.css con un fondo caribeño y tarjetas transparentes.
+Implementamos la animación fadeIn y los estilos para modo oscuro.
+
+📅 Día 3 – Lógica del quiz
+Se creó questions.js con 10 preguntas de orientación vocacional.
+Implementamos Quiz.jsx para manejar las respuestas y calcular la vocación.
+Agregamos el componente Result.jsx para mostrar resultados personalizados.
+
+📅 Día 4 – Interactividad y almacenamiento local
+Se integró useState y useEffect para guardar el modo oscuro en localStorage.
+Se añadió el botón para alternar entre modo claro/oscuro en Header.jsx.
+Se probó la persistencia del tema en diferentes navegadores.
+
+📅 Día 5 – Pruebas y optimización
+Se probaron todos los flujos del quiz.
+Se verificó la compatibilidad en móviles y pantallas pequeñas.
+Se añadió el mensaje motivacional “¡Eso va con tu flow!” con expresiones dominicanas.
+
+📅 Día 6 – Documentación y entrega final
+Se elaboró el archivo README.md con descripción, integrantes, tecnologías y aprendizajes.
+Se generó este archivo evidencia_historial.txt como registro del proceso.
+Se preparó la entrega final en formato ZIP para evaluación.
+
+Resultado Final:
+Aplicación funcional, atractiva, con modo oscuro y lenguaje dominicano.
+Refleja identidad cultural, creatividad y dominio de React.
+
+“Hecho con orgullo dominicano 🇩🇴 • Vocación Dominicana 2025”
