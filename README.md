@@ -60,8 +60,7 @@ npm run preview
 
 🌐 Despliegue en línea
 
-🔗 https://vocacion-dominicana.vercel.app
- (ejemplo)
+🔗 https://vocacion-dominicana-delta.vercel.app/
 
 💡 Lo que aprendimos
 Durante el desarrollo del proyecto aprendimos a:
@@ -77,5 +76,6 @@ Enfocar el diseño con contexto cultural dominicano, fomentando identidad nacion
 
 El proyecto refleja la calidez, creatividad y espíritu de superación del pueblo dominicano.
 Buscamos que cada estudiante sienta orgullo de su país y confianza en su futuro.
+
 
 “Hecho con orgullo dominicano 🇩🇴 – Vocación Dominicana 2025”
