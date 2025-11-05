@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { questions } from '../data/questions' 
+import { questions } from '../data/questions'
 
 export default function Quiz({ onFinish }) {
   const [answers, setAnswers] = useState({})
@@ -8,19 +8,26 @@ export default function Quiz({ onFinish }) {
   const q = questions[step]
 
   function choose(opt) {
-    const areaKey = opt.area.toLowerCase()
-    setAnswers(a => ({ ...a, [q.id]: areaKey }))
+    const areaKey = opt.area.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    const updatedAnswers = { ...answers, [q.id]: areaKey }
 
     if (step + 1 < questions.length) {
+      setAnswers(updatedAnswers)
       setStep(s => s + 1)
     } else {
-      // Contar respuestas por área
+      // ✅ Usar respuestas actualizadas
       const counts = {}
-      Object.values({ ...answers, [q.id]: areaKey }).forEach(
-        t => (counts[t] = (counts[t] || 0) + 1)
-      )
-      const top = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0]
+      Object.values(updatedAnswers).forEach(area => {
+        counts[area] = (counts[area] || 0) + 1
+      })
 
+      // Encontrar el área con más respuestas
+      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1])
+      const topArea = sorted[0][0]
+      const topCount = sorted[0][1]
+      const isTie = sorted.filter(([_, c]) => c === topCount).length > 1
+
+      // Mapeo de resultados
       const mapping = {
         ingenieria: {
           title: 'Ingeniería',
@@ -40,13 +47,17 @@ export default function Quiz({ onFinish }) {
         },
       }
 
-      const res =
-        mapping[top] || {
-          title: 'Vocación múltiple',
-          desc: 'Tienes varias habilidades, ¡explora tus opciones!',
-        }
+      const result = isTie
+        ? {
+            title: 'Vocación múltiple',
+            desc: 'Tienes varias habilidades, ¡explora tus opciones!',
+          }
+        : mapping[topArea] || {
+            title: 'Vocación múltiple',
+            desc: 'Tienes varias habilidades, ¡explora tus opciones!',
+          }
 
-      onFinish(res)
+      onFinish(result)
     }
   }
 
@@ -58,14 +69,19 @@ export default function Quiz({ onFinish }) {
       <h2 className="q">{q.question}</h2>
       <div className="options">
         {q.options.map((o, i) => (
-          <button key={`${q.id}-${i}`} className="option" onClick={() => choose(o)}>
+          <button
+            key={`${q.id}-${i}`}
+            className="option"
+            onClick={() => choose(o)}
+          >
             <strong>{o.text}</strong>
           </button>
         ))}
       </div>
       <div className="note">
-        💡 Consejo: Para asegurar un buen resultado, responde de manera espontanea.
+        💡 Consejo: Para asegurar un buen resultado, responde de manera espontánea.
       </div>
     </section>
   )
 }
+
