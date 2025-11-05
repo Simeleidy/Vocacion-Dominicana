@@ -6,7 +6,7 @@ import Result from './components/Result'
 export default function App() {
   const [result, setResult] = useState(null)
   const [dark, setDark] = useState(false)
-  const [started, setStarted] = useState(false) // 👈 Nueva variable para controlar si ya comenzó el test
+  const [started, setStarted] = useState(false) 
 
   useEffect(() => {
     const savedMode = localStorage.getItem('darkMode')
@@ -55,5 +55,6 @@ export default function App() {
     </div>
   )
 }
+
 
 
